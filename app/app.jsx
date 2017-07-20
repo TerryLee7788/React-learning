@@ -1,97 +1,25 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-
-// var GreeterMessage = React.createClass({
-//   render: function () {
-//     var name = this.props.name;
-//     var message = this.props.message;
-//
-//     return (
-//       <div>
-//         <h1>Hello {name}!</h1>
-//         <p>{message}</p>
-//       </div>
-//     );
-//   }
-// });
-//
-// var GreeterForm = React.createClass({
-//   onFormSubmit: function (e) {
-//     e.preventDefault();
-//     var updates = {};
-//     var name = this.refs.name.value;
-//     var message = this.refs.message.value;
-//
-//     if (name.length > 0) {
-//       this.refs.name.value = '';
-//       updates.name = name;
-//     }
-//
-//     if (message.length > 0) {
-//       this.refs.message.value = '';
-//       updates.message = message;
-//     }
-//
-//     this.props.onNewData(updates);
-//   },
-//   render: function () {
-//     return (
-//       <form onSubmit={this.onFormSubmit}>
-//         <div>
-//           <input type="text" ref="name" placeholder="Enter Name."/>
-//         </div>
-//         <div>
-//           <textarea ref="message" placeholder="Enter Message."></textarea>
-//         </div>
-//         <button>Submit</button>
-//       </form>
-//     );
-//   }
-// });
-//
-// var Greeter = React.createClass({
-//   getDefaultProps: function () {
-//     return {
-//       name: 'Terry',
-//       message: 'React Learning!'
-//     };
-//   },
-//   getInitialState: function () {
-//     return {
-//       name: this.props.name,
-//       message: this.props.message
-//     };
-//   },
-//   handleNewData: function (updates) {
-//     this.setState(updates);
-//   },
-//   render: function () {
-//     var name = this.state.name;
-//     var message = this.state.message;
-//
-//     return (
-//       <div>
-//         <GreeterMessage name={name} message={message}/>
-//         <GreeterForm onNewData={this.handleNewData}/>
-//       </div>
-//     );
-//   }
-// });
-//
-// var name = 'Terry outside.';
-//
-// ReactDOM.render(
-//   <Greeter name={name}/>,
-//   document.getElementById('app')
-// );
-
+import React from 'react';
+import {Component} from 'react';
+import ReactDOM from 'react-dom';
 import ComponentOne from './components/ComponentOne';
 import ComponentTwo from './components/ComponentTwo';
+import List from './components/ListComponents';
+import Greeter from './components/GreeterComponents';
+
+class App extends Component {
+  render () {
+    return (
+      <div>
+        <ComponentOne count={123} />
+        <ComponentTwo count={7788} />
+        <List />
+        <Greeter />
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(
-  <div>
-    <ComponentOne count={123} />
-    <ComponentTwo count={7788} />
-  </div>,
+  <App />,
   document.getElementById('app')
 );
