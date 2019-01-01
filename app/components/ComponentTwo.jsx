@@ -1,6 +1,49 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
+
+class ComponentTwo extends React.Component {
+
+  constructor (props) {
+    super(props); // what's this mean?
+    this.state = {
+      count: props.count
+    };
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick () {
+    this.setState({
+      count: ++this.state.count
+    });
+  }
+
+  render () {
+    return (
+      <div>
+        <h3>Component One Using createReactClass</h3>
+        <p>Current count: {this.state.count}</p>
+        <button onClick={this.onClick}>Update Number</button>
+      </div>
+    );
+  }
+
+}
+
+ComponentTwo.defaultProps = {
+  count: 11
+};
+
+ComponentTwo.propTypes = {
+  count: () => {
+
+    return PropTypes.count;
+
+  }
+};
+
+/*
+
+import createReactClass from 'create-react-class';
 
 var ComponentTwo = createReactClass({
   getInitialState: function () {
@@ -31,5 +74,7 @@ var ComponentTwo = createReactClass({
     );
   }
 });
+
+*/
 
 export default ComponentTwo;
