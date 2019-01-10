@@ -2,7 +2,7 @@ import React from 'react';
 import {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-import Admin from 'ComponentOne';
+import Admin from 'Admin';
 import ComponentTwo from 'ComponentTwo';
 import List from 'ListComponents';
 import Greeter from 'GreeterComponents';

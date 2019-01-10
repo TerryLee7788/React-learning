@@ -17,6 +17,7 @@ module.exports = {
       GreeterComponents: path.resolve(__dirname, './app/components/GreeterComponents.jsx'),
       GreeterMessage: path.resolve(__dirname, './app/components/GreeterMessage.jsx'),
       GreeterForm: path.resolve(__dirname, './app/components/GreeterForm.jsx'),
+      Admin: path.resolve(__dirname, './app/components/Admin.jsx'),
     },
     extensions: ['.js', '.jsx']
   },

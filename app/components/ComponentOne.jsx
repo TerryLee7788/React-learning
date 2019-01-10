@@ -1,26 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const isAdmin = true; // this value should be from the database
-const adminComponent = (Component) => {
-  return class Admin extends React.Component {
-    render () {
-      if (isAdmin) {
-        return (
-          <div className="admin">
-            <p>Admin only</p>
-            <Component {...this.props}/>
-          </div>
-        )
-      } else {
-        return null;
-      }
-    }
-  };
-};
-
-// what is "{...this.props}" this means?
-
 // const adminComponent = (Component) => {
 //   return class Admin extends Component {
 //     componentDidUpdate () {
@@ -48,7 +28,7 @@ class ComponentOne extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      count: props.count
+      count: this.props.count
     };
     this.onClick = this.onClick.bind(this);
   }
@@ -79,4 +59,4 @@ ComponentOne.propTypes = {
   count: PropTypes.number
 };
 
-export default adminComponent(ComponentOne);
+export default ComponentOne;
