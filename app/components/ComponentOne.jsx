@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 // const adminComponent = (Component) => {
@@ -24,7 +24,7 @@ import PropTypes from 'prop-types';
 //   };
 // };
 
-class ComponentOne extends React.Component {
+class ComponentOne extends Component {
   constructor (props) {
     super(props);
     this.state = {
