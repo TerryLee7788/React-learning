@@ -30,12 +30,12 @@ class ComponentOne extends Component {
     this.state = {
       count: this.props.count
     };
-    this.onClick = this.onClick.bind(this);
+    // this.onClick = this.onClick.bind(this);
   }
   componentDidUpdate () {
     console.log('ComponentOne component did update.');
   }
-  onClick () {
+  onClick = () => {
     this.setState({
       count: ++this.state.count
     });
