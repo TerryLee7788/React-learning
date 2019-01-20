@@ -1,31 +1,38 @@
-import React from 'react';
-import { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class GreeterForm extends Component {
-    constructor(props) {
-        super(props);
-    }
-    onFormSubmit(e) {
+class GreeterForm extends PureComponent {
+
+    handleSubmit = (e) => {
+
         e.preventDefault();
-        var updates = {};
-        var name = this.refs.name.value;
-        var message = this.refs.message.value;
+
+        const updates = {};
+        const name = this.refs.name.value;
+        const message = this.refs.message.value;
 
         if (name.length > 0) {
-            this.refs.name.value = '';
-            updates.name = name;
+
+          this.refs.name.value = '';
+          updates.name = name;
+
         }
 
         if (message.length > 0) {
-            this.refs.message.value = '';
-            updates.message = message;
+
+          this.refs.message.value = '';
+          updates.message = message;
+
         }
 
-        this.props.onNewData(updates);
+        this.props.handleUpdateState(updates);
+
     }
-    render() {
+
+    render () {
+
         return (
-            <form onSubmit={this.onFormSubmit.bind(this)}>
+
+            <form onSubmit={this.handleSubmit}>
                 <div>
                     <input type="text" ref="name" placeholder="Enter Name." />
                 </div>
@@ -34,8 +41,11 @@ class GreeterForm extends Component {
                 </div>
                 <button>Submit</button>
             </form>
+
         );
+
     }
+
 }
 
 export default GreeterForm;

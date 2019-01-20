@@ -1,20 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const lists = [
-  { name: 'Terry' },
-  { name: 'Terry2' },
-  { name: 'Terry3' }
-];
+const List = (props) => {
 
-class List extends Component {
-  render () {
     return (
+
       <div>
-        <h3>List Items</h3>
-        {lists.map((obj, idx) => <div key={idx}>{obj.name}</div>)}
+          <h3>List Items</h3>
+          {props.lists.map(({name}, idx) => <div key={idx}>{name}</div>)}
       </div>
+
     );
-  }
-}
+
+};
 
 export default List;

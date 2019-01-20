@@ -3,6 +3,7 @@ import ComponentOne from 'ComponentOne';
 
 const isAdmin = true; // this value should be from the database
 
+// high order component
 const adminComponent = (Component) => {
 
     return class Admin extends PureComponent {
@@ -20,11 +21,8 @@ const adminComponent = (Component) => {
 
                 )
             }
-            else {
 
-                return null;
-
-            }
+            return null;
 
         }
 

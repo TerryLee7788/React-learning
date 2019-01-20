@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class GreeterMessage extends Component {
+class GreeterMessage extends PureComponent {
 
     constructor(props) {
 
